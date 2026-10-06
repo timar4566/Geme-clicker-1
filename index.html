@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 
-<meta name="google-site-verification" content="RkgQiWhviF00OqFmpn04IQDIpNCNGdwwJ9cZ3S1vW90" />
+<meta name="google-site-verification" content="RkgQiWhviF00OqFmpn04IQDIpNCNGdwwJ9cZ3S1vW90">
 
 <meta charset="UTF-8">
 
@@ -13,27 +13,33 @@ content="width=device-width,initial-scale=1.0,user-scalable=no">
 
 <style>
 
-* {
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-button, .account, .menu-item {
-    position: relative;
-}
-
-.emoji {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    pointer-events: none;
-}
-
 *{
 box-sizing:border-box;
 -webkit-tap-highlight-color:transparent;
+user-select:none;
+-webkit-user-select:none;
+}
+
+button,input{
+font-family:inherit;
+}
+
+button{
+border:0;
+cursor:pointer;
+}
+
+button,.account,.menu-item{
+position:relative;
+}
+
+.emoji{
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+font-size:24px;
+pointer-events:none;
 }
 
 html,body{
@@ -50,15 +56,6 @@ body{
 overflow-x:hidden;
 }
 
-button,input{
-font-family:inherit;
-}
-
-button{
-border:0;
-cursor:pointer;
-}
-
 .app{
 min-height:100vh;
 background:
@@ -67,7 +64,7 @@ linear-gradient(180deg,#07152f,#020817);
 padding-bottom:95px;
 }
 
-/* ================= TOP BAR ================= */
+/* TOP BAR */
 
 .topbar{
 position:fixed;
@@ -108,7 +105,7 @@ box-shadow:0 5px 18px rgba(0,0,0,.3);
 color:#8bdcff;
 }
 
-/* ================= ACCOUNT ================= */
+/* ACCOUNT */
 
 .account-menu{
 position:fixed;
@@ -161,7 +158,7 @@ color:white;
 font-weight:bold;
 }
 
-/* ================= CONTENT ================= */
+/* CONTENT */
 
 .pages{
 padding-top:80px;
@@ -182,20 +179,17 @@ display:block;
 }
 
 @keyframes pageIn{
-
 from{
 opacity:0;
 transform:translateY(10px);
 }
-
 to{
 opacity:1;
 transform:translateY(0);
 }
-
 }
 
-/* ================= CARDS ================= */
+/* CARDS */
 
 .card{
 background:
@@ -204,17 +198,11 @@ linear-gradient(
 rgba(18,39,80,.9),
 rgba(7,18,42,.92)
 );
-
 border:1px solid rgba(255,255,255,.08);
-
 border-radius:22px;
-
 padding:18px;
-
 margin-bottom:14px;
-
-box-shadow:
-0 12px 30px rgba(0,0,0,.25);
+box-shadow:0 12px 30px rgba(0,0,0,.25);
 }
 
 .card-title{
@@ -228,7 +216,7 @@ color:#9eafd0;
 font-size:13px;
 }
 
-/* ================= HOME ================= */
+/* HOME */
 
 .home-hero{
 text-align:center;
@@ -259,9 +247,7 @@ margin-bottom:18px;
 font-size:43px;
 font-weight:bold;
 color:#ffd84d;
-text-shadow:
-0 0 25px rgba(255,210,50,.2);
-
+text-shadow:0 0 25px rgba(255,210,50,.2);
 max-width:100%;
 overflow:hidden;
 white-space:nowrap;
@@ -280,24 +266,84 @@ color:#7ec8ff;
 margin-top:10px;
 }
 
-/* ================= REPORT SHOP ================= */
+.click-area{
+display:flex;
+justify-content:center;
+margin:28px 0;
+}
+
+.click-button{
+width:220px;
+height:220px;
+border-radius:50%;
+background:
+radial-gradient(
+circle at 35% 25%,
+#ffe87d,
+#ffb300 45%,
+#e87500 100%
+);
+border:8px solid rgba(255,255,255,.14);
+box-shadow:
+0 0 0 10px rgba(255,180,0,.05),
+0 20px 55px rgba(255,145,0,.2);
+font-size:80px;
+transition:.08s;
+}
+
+.click-button:active{
+transform:scale(.93);
+}
+
+.click-button.cooldown{
+cursor:not-allowed;
+opacity:.82;
+}
+
+.click-button.cooldown:active{
+transform:none;
+}
+
+#clickIcon{
+display:block;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.stat{
+padding:15px;
+text-align:center;
+border-radius:16px;
+background:#0d1e40;
+}
+
+.stat-value{
+font-size:21px;
+font-weight:bold;
+color:#7fc8ff;
+margin-top:5px;
+}
+
+/* REPORT */
 
 .report-box{
 margin-top:18px;
 padding:16px;
 border-radius:20px;
-
 background:
 linear-gradient(
 145deg,
 rgba(28,55,105,.95),
 rgba(8,20,45,.95)
 );
-
 border:1px solid rgba(255,255,255,.09);
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.2);
+box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
 .report-title{
@@ -349,14 +395,12 @@ width:100%;
 margin-top:12px;
 padding:13px;
 border-radius:13px;
-
 background:
 linear-gradient(
 135deg,
 #168cff,
 #174cc0
 );
-
 color:white;
 font-weight:bold;
 font-size:15px;
@@ -369,12 +413,10 @@ linear-gradient(
 #00b878,
 #087b5b
 );
-
-box-shadow:
-0 0 20px rgba(0,210,140,.15);
+box-shadow:0 0 20px rgba(0,210,140,.15);
 }
 
-/* ================= SPECIAL REPORT ================= */
+/* SPECIAL REPORT */
 
 .special-report-hero{
 text-align:center;
@@ -413,20 +455,16 @@ width:100%;
 margin-top:22px;
 padding:17px;
 border-radius:16px;
-
 background:
 linear-gradient(
 135deg,
 #9b3dff,
 #5b20bb
 );
-
 color:white;
 font-size:18px;
 font-weight:bold;
-
-box-shadow:
-0 10px 30px rgba(130,50,255,.2);
+box-shadow:0 10px 30px rgba(130,50,255,.2);
 }
 
 .special-report-button:active{
@@ -481,63 +519,7 @@ font-weight:bold;
 font-size:12px;
 }
 
-/* ================= CLICK ================= */
-
-.click-area{
-display:flex;
-justify-content:center;
-margin:28px 0;
-}
-
-.click-button{
-width:220px;
-height:220px;
-border-radius:50%;
-
-background:
-radial-gradient(
-circle at 35% 25%,
-#ffe87d,
-#ffb300 45%,
-#e87500 100%
-);
-
-border:8px solid rgba(255,255,255,.14);
-
-box-shadow:
-0 0 0 10px rgba(255,180,0,.05),
-0 20px 55px rgba(255,145,0,.2);
-
-font-size:80px;
-
-transition:.08s;
-}
-
-.click-button:active{
-transform:scale(.93);
-}
-
-.stats{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.stat{
-padding:15px;
-text-align:center;
-border-radius:16px;
-background:#0d1e40;
-}
-
-.stat-value{
-font-size:21px;
-font-weight:bold;
-color:#7fc8ff;
-margin-top:5px;
-}
-
-/* ================= UPGRADES ================= */
+/* UPGRADES */
 
 .sub-tabs{
 display:grid;
@@ -556,16 +538,13 @@ font-weight:bold;
 
 .sub-tab.active{
 color:white;
-
 background:
 linear-gradient(
 135deg,
 #167fff,
 #174cc0
 );
-
-box-shadow:
-0 8px 20px rgba(20,100,255,.2);
+box-shadow:0 8px 20px rgba(20,100,255,.2);
 }
 
 .sub-page{
@@ -586,15 +565,11 @@ gap:12px;
 width:58px;
 height:58px;
 border-radius:16px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 font-size:31px;
-
 background:#0b1b3c;
-
 flex-shrink:0;
 }
 
@@ -638,7 +613,7 @@ font-weight:bold;
 background:#7538d8;
 }
 
-/* ================= BOTS ================= */
+/* BOTS */
 
 .bot-toggle{
 margin-top:9px;
@@ -653,7 +628,7 @@ color:white;
 background:#0c9b68;
 }
 
-/* ================= BATTLE ================= */
+/* BATTLE */
 
 .arena{
 text-align:center;
@@ -704,7 +679,6 @@ linear-gradient(
 #18db7d,
 #0e9e5b
 );
-
 transition:.25s;
 }
 
@@ -722,14 +696,12 @@ width:100%;
 margin-top:20px;
 padding:16px;
 border-radius:16px;
-
 background:
 linear-gradient(
 135deg,
 #ff493e,
 #bd1d2e
 );
-
 color:white;
 font-size:18px;
 font-weight:bold;
@@ -749,7 +721,7 @@ color:#b9c7df;
 font-size:13px;
 }
 
-/* ================= SHOP ================= */
+/* SHOP */
 
 .shop-item{
 text-align:center;
@@ -779,7 +751,7 @@ background:#321c55;
 color:#dcbaff;
 }
 
-/* ================= REWARD ================= */
+/* REWARD */
 
 .reward{
 margin-top:30px;
@@ -812,7 +784,7 @@ margin-top:10px;
 font-size:13px;
 }
 
-/* ================= BOTTOM NAV ================= */
+/* NAV */
 
 .bottom-nav{
 position:fixed;
@@ -821,33 +793,24 @@ right:0;
 bottom:0;
 height:78px;
 z-index:150;
-
 display:grid;
 grid-template-columns:repeat(5,1fr);
-
 padding:
 7px 7px
 calc(7px + env(safe-area-inset-bottom));
-
 background:rgba(3,11,28,.94);
-
 backdrop-filter:blur(18px);
-
-border-top:
-1px solid rgba(255,255,255,.08);
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 .nav-btn{
 background:transparent;
 color:#68799b;
-
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-
 gap:3px;
-
 border-radius:15px;
 font-size:10px;
 }
@@ -882,29 +845,6 @@ display:flex;
 color:#d08aff;
 background:rgba(170,70,255,.1);
 }
-
-/* ================= FULLSCREEN ================= */
-
-.fullscreen-hint{
-position:fixed;
-left:50%;
-top:50%;
-
-transform:
-translate(-50%,-50%);
-
-z-index:500;
-
-padding:15px 20px;
-
-border-radius:15px;
-
-background:#10244b;
-
-display:none;
-}
-
-/* ================= RESPONSIVE ================= */
 
 @media(max-width:380px){
 
@@ -941,40 +881,25 @@ font-size:9px;
 
 <header class="topbar">
 
-<button
-class="top-btn"
-onclick="toggleAccounts()">
-👤
-</button>
+<button class="top-btn" onclick="toggleAccounts()">👤</button>
 
 <div class="top-title">
 <span>Coin</span> Clicker
 </div>
 
-<button
-class="top-btn infinity-btn"
-onclick="toggleInfinity()">
-∞
-</button>
+<button class="top-btn infinity-btn" onclick="toggleInfinity()">∞</button>
 
 </header>
 
-<div
-id="accountMenu"
-class="account-menu">
+<div id="accountMenu" class="account-menu">
 
 <div class="account-title">
 👤 حساب‌ها
 </div>
 
-<div
-id="accountList"
-class="account-list">
-</div>
+<div id="accountList" class="account-list"></div>
 
-<button
-class="new-account"
-onclick="createAccount()">
+<button class="new-account" onclick="createAccount()">
 ＋ حساب جدید
 </button>
 
@@ -982,9 +907,7 @@ onclick="createAccount()">
 
 <main class="pages">
 
-<section
-id="page-home"
-class="page active">
+<section id="page-home" class="page active">
 
 <div class="home-hero">
 
@@ -992,17 +915,13 @@ class="page active">
 🪙 <span>Coin</span> Clicker
 </div>
 
-<div
-id="accountName"
-class="account-name">
+<div id="accountName" class="account-name">
 حساب 1
 </div>
 
 <div class="coin-box">
 
-<div
-id="coins"
-class="coin-number">
+<div id="coins" class="coin-number">
 0
 </div>
 
@@ -1010,9 +929,7 @@ class="coin-number">
 🪙 سکه
 </div>
 
-<div
-id="clickPower"
-class="power-box">
+<div id="clickPower" class="power-box">
 قدرت کلیک: 10 🪙
 </div>
 
@@ -1020,11 +937,8 @@ class="power-box">
 
 <div class="click-area">
 
-<button
-id="clickButton"
-class="click-button"
-onclick="clickCoin()">
-🪙
+<button id="clickButton" class="click-button" onclick="clickCoin()">
+<span id="clickIcon">🪙</span>
 </button>
 
 </div>
@@ -1035,41 +949,21 @@ onclick="clickCoin()">
 
 <div class="stat">
 🪙
-
-<div
-class="stat-value"
-id="homeCoins">
-0
-</div>
-
-<div class="small">
-سکه
-</div>
-
+<div class="stat-value" id="homeCoins">0</div>
+<div class="small">سکه</div>
 </div>
 
 <div class="stat">
 ⚡
-
-<div
-class="stat-value"
-id="homePower">
-10
-</div>
-
-<div class="small">
-قدرت کلیک
-</div>
-
+<div class="stat-value" id="homePower">10</div>
+<div class="small">قدرت کلیک</div>
 </div>
 
 </div>
 
 </section>
 
-<section
-id="page-upgrades"
-class="page">
+<section id="page-upgrades" class="page">
 
 <div class="card">
 
@@ -1085,43 +979,27 @@ class="page">
 
 <div class="sub-tabs">
 
-<button
-id="clickTab"
-class="sub-tab active"
-onclick="showUpgradeTab('click')">
+<button id="clickTab" class="sub-tab active" onclick="showUpgradeTab('click')">
 ⚔️ ارتقاهای شخصی
 </button>
 
-<button
-id="botTab"
-class="sub-tab"
-onclick="showUpgradeTab('bot')">
+<button id="botTab" class="sub-tab" onclick="showUpgradeTab('bot')">
 🤖 ربات‌ها
 </button>
 
 </div>
 
-<div
-id="clickUpgrades"
-class="sub-page active">
-
+<div id="clickUpgrades" class="sub-page active">
 <div id="upgradeList"></div>
-
 </div>
 
-<div
-id="botUpgrades"
-class="sub-page">
-
+<div id="botUpgrades" class="sub-page">
 <div id="botList"></div>
-
 </div>
 
 </section>
 
-<section
-id="page-battle"
-class="page">
+<section id="page-battle" class="page">
 
 <div class="card arena">
 
@@ -1136,76 +1014,45 @@ class="page">
 
 <div class="fighter">
 
-<div class="fighter-icon">
-👱
-</div>
+<div class="fighter-icon">👱</div>
 
-<b>
-کاراکتر من
-</b>
+<b>کاراکتر من</b>
 
 <div class="hp">
 HP:
-
-<span id="playerHp">
-100 / 100
-</span>
-
+<span id="playerHp">100 / 100</span>
 </div>
 
 <div class="hp-bar">
-
-<div
-id="playerHpBar"
-class="hp-fill">
-</div>
-
+<div id="playerHpBar" class="hp-fill"></div>
 </div>
 
 </div>
 
 <div class="fighter enemy">
 
-<div class="fighter-icon">
-🤖
-</div>
+<div class="fighter-icon">🤖</div>
 
-<b>
-ربات دشمن
-</b>
+<b>ربات دشمن</b>
 
 <div class="hp">
 HP:
-
-<span id="enemyHp">
-100
-</span>
-
+<span id="enemyHp">100</span>
 </div>
 
 <div class="hp-bar">
-
-<div
-id="enemyHpBar"
-class="hp-fill">
+<div id="enemyHpBar" class="hp-fill"></div>
 </div>
 
 </div>
 
 </div>
 
-</div>
-
-<button
-id="battleButton"
-class="battle-btn"
-onclick="battle()">
+<button id="battleButton" class="battle-btn" onclick="battle()">
 ⚔️ مبارزه
 </button>
 
-<div
-id="battleLog"
-class="battle-log">
+<div id="battleLog" class="battle-log">
 آماده مبارزه!
 </div>
 
@@ -1225,9 +1072,7 @@ class="battle-log">
 
 <div class="card upgrade-card">
 
-<div class="upgrade-icon">
-⚔️
-</div>
+<div class="upgrade-icon">⚔️</div>
 
 <div class="upgrade-info">
 
@@ -1241,18 +1086,13 @@ class="battle-log">
 
 <div class="price">
 قیمت:
-
-<span id="damagePrice">
-500
-</span>
+<span id="damagePrice">500</span>
 🪙
 </div>
 
 </div>
 
-<button
-class="mini-btn"
-onclick="upgradeDamage()">
+<button class="mini-btn" onclick="upgradeDamage()">
 ارتقا
 </button>
 
@@ -1260,9 +1100,7 @@ onclick="upgradeDamage()">
 
 <div class="card upgrade-card">
 
-<div class="upgrade-icon">
-❤️
-</div>
+<div class="upgrade-icon">❤️</div>
 
 <div class="upgrade-info">
 
@@ -1276,18 +1114,13 @@ onclick="upgradeDamage()">
 
 <div class="price">
 قیمت:
-
-<span id="healPrice">
-700
-</span>
+<span id="healPrice">700</span>
 🪙
 </div>
 
 </div>
 
-<button
-class="mini-btn"
-onclick="upgradeHP()">
+<button class="mini-btn" onclick="upgradeHP()">
 ارتقا
 </button>
 
@@ -1295,9 +1128,7 @@ onclick="upgradeHP()">
 
 </section>
 
-<section
-id="page-shop"
-class="page">
+<section id="page-shop" class="page">
 
 <div class="card shop-item">
 
@@ -1305,23 +1136,17 @@ class="page">
 🛒 شاپ
 </div>
 
-<div class="shop-icon">
-🎁
-</div>
+<div class="shop-icon">🎁</div>
 
 <div>
 آیتم‌های ویژه به‌زودی اضافه می‌شوند.
 </div>
 
-<button
-class="shop-buy"
-onclick="shopComingSoon()">
+<button class="shop-buy" onclick="shopComingSoon()">
 🛍️ خرید آیتم
 </button>
 
-<div
-id="comingSoon"
-class="coming-soon">
+<div id="comingSoon" class="coming-soon">
 هنوز این قسمت ساخته نشده 🚧
 </div>
 
@@ -1337,25 +1162,17 @@ class="coming-soon">
 
 <div class="report-stat">
 
-<b id="reportCount">
-0
-</b>
+<b id="reportCount">0</b>
 
-<span>
-تعداد ریپورت
-</span>
+<span>تعداد ریپورت</span>
 
 </div>
 
 <div class="report-stat">
 
-<b id="incomeMultiplier">
-×1
-</b>
+<b id="incomeMultiplier">×1</b>
 
-<span>
-ضریب درآمد
-</span>
+<span>ضریب درآمد</span>
 
 </div>
 
@@ -1365,16 +1182,11 @@ class="coming-soon">
 
 درآمد تا ریپورت بعدی:
 
-<b id="reportProgress">
-0 / 100K
-</b>
+<b id="reportProgress">0 / 100K</b>
 
 </div>
 
-<button
-id="reportButton"
-class="report-button"
-onclick="report()">
+<button id="reportButton" class="report-button" onclick="report()">
 📋 دریافت ریپورت
 </button>
 
@@ -1390,44 +1202,31 @@ onclick="report()">
 اگر کد جایزه داری اینجا وارد کن
 </div>
 
-<input
-id="rewardCode"
-type="text"
-placeholder="کد جایزه را وارد کنید">
+<input id="rewardCode" type="text" placeholder="کد جایزه را وارد کنید">
 
-<button
-onclick="useRewardCode()">
+<button onclick="useRewardCode()">
 فعال کردن کد
 </button>
 
-<div
-id="rewardMessage"
-class="reward-message">
-</div>
+<div id="rewardMessage" class="reward-message"></div>
 
 </div>
 
 </section>
 
-<section
-id="page-special-report"
-class="page">
+<section id="page-special-report" class="page">
 
 <div class="card">
 
 <div class="special-report-hero">
 
-<div class="special-report-icon">
-📋
-</div>
+<div class="special-report-icon">📋</div>
 
 <div class="card-title">
 ریپورت ویژه
 </div>
 
-<div
-id="specialReportCount"
-class="special-report-number">
+<div id="specialReportCount" class="special-report-number">
 0
 </div>
 
@@ -1435,20 +1234,14 @@ class="special-report-number">
 تعداد ریپورت ویژه
 </div>
 
-<div
-id="specialReportMultiplier"
-class="special-report-multiplier">
+<div id="specialReportMultiplier" class="special-report-multiplier">
 ضریب این بخش: ×1
 </div>
 
 </div>
 
-<button
-class="special-report-button"
-onclick="getSpecialReport()">
-
+<button class="special-report-button" onclick="getSpecialReport()">
 📋 دریافت ۱ ریپورت
-
 </button>
 
 </div>
@@ -1477,23 +1270,17 @@ onclick="getSpecialReport()">
 قدرت کلیک ریپورت
 </div>
 
-<div
-id="specialReportPower"
-class="special-upgrade-power">
+<div id="specialReportPower" class="special-upgrade-power">
 +1 ریپورت در هر کلیک
 </div>
 
-<div
-id="specialReportUpgradePrice"
-class="special-upgrade-price">
+<div id="specialReportUpgradePrice" class="special-upgrade-price">
 هزینه: 10 ریپورت
 </div>
 
 </div>
 
-<button
-class="special-upgrade-button"
-onclick="upgradeSpecialReport()">
+<button class="special-upgrade-button" onclick="upgradeSpecialReport()">
 ارتقا
 </button>
 
@@ -1509,8 +1296,7 @@ onclick="upgradeSpecialReport()">
 هر ریپورت ویژه ضریب درآمد را ۲۵ برابر افزایش می‌دهد.
 </div>
 
-<div
-id="specialReportIncomeText"
+<div id="specialReportIncomeText"
 style="
 margin-top:12px;
 text-align:center;
@@ -1529,94 +1315,48 @@ color:#d49aff;
 
 <nav class="bottom-nav">
 
-<button
-id="nav-home"
-class="nav-btn active"
-onclick="showPage('home')">
-
-<div class="nav-icon">
-🏠
-</div>
-
+<button id="nav-home" class="nav-btn active" onclick="showPage('home')">
+<div class="nav-icon">🏠</div>
 Main Menu
-
 </button>
 
-<button
-id="nav-upgrades"
-class="nav-btn"
-onclick="showPage('upgrades')">
-
-<div class="nav-icon">
-⚡
-</div>
-
+<button id="nav-upgrades" class="nav-btn" onclick="showPage('upgrades')">
+<div class="nav-icon">⚡</div>
 Upgrade
-
 </button>
 
-<button
-id="nav-battle"
-class="nav-btn"
-onclick="showPage('battle')">
-
-<div class="nav-icon">
-⚔️
-</div>
-
+<button id="nav-battle" class="nav-btn" onclick="showPage('battle')">
+<div class="nav-icon">⚔️</div>
 War
-
 </button>
 
-<button
-id="nav-shop"
-class="nav-btn"
-onclick="showPage('shop')">
-
-<div class="nav-icon">
-🛒
-</div>
-
+<button id="nav-shop" class="nav-btn" onclick="showPage('shop')">
+<div class="nav-icon">🛒</div>
 Shop
-
 </button>
 
-<button
-id="nav-special-report"
-class="nav-btn"
-onclick="showPage('special-report')">
-
-<div class="nav-icon">
-📋
-</div>
-
+<button id="nav-special-report" class="nav-btn" onclick="showPage('special-report')">
+<div class="nav-icon">📋</div>
 Reports
-
 </button>
 
 </nav>
 
 </div>
 
-
-<!-- =================================================
-SUPABASE
-================================================= -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
 /* =================================================
-SUPABASE CONNECTION
-این قسمت فقط برای اتصال آنلاین بازی است.
+SUPABASE
 ================================================= */
 
 const SUPABASE_URL =
 "https://vtytmucbgmwmibtnmydh.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-"sb_publishable_zdk7lzuPbA7ZHDBIi6OL6Q_rVh7J8sG";
+"sb_publishable_zdk7lzuPbA7ZHDBIi6LQ_rVh7J8sG";
 
 const supabaseClient =
 window.supabase.createClient(
@@ -1625,350 +1365,8 @@ SUPABASE_PUBLISHABLE_KEY
 );
 
 let onlineUser=null;
-
 let onlineReady=false;
-
 let onlineSyncBusy=false;
-
-
-/* =================================================
-SUPABASE ANONYMOUS LOGIN
-================================================= */
-
-async function connectSupabase(){
-
-try{
-
-const sessionResult =
-await supabaseClient.auth.getSession();
-
-let session =
-sessionResult.data.session;
-
-if(!session){
-
-const loginResult =
-await supabaseClient.auth.signInAnonymously();
-
-if(loginResult.error){
-
-console.error(
-"Supabase anonymous login error:",
-loginResult.error
-);
-
-return;
-
-}
-
-session=
-loginResult.data.session;
-
-}
-
-if(!session || !session.user){
-
-console.error(
-"Supabase user not found."
-);
-
-return;
-
-}
-
-onlineUser=
-session.user;
-
-onlineReady=true;
-
-console.log(
-"Supabase connected:",
-onlineUser.id
-);
-
-await checkOnlineBan();
-
-await syncCurrentPlayer();
-
-}catch(error){
-
-console.error(
-"Supabase connection error:",
-error
-);
-
-}
-
-}
-
-
-/* =================================================
-CHECK BAN
-================================================= */
-
-async function checkOnlineBan(){
-
-if(!onlineReady || !onlineUser){
-
-return false;
-
-}
-
-try{
-
-const result =
-await supabaseClient
-.from("players")
-.select("banned")
-.eq("user_id",onlineUser.id)
-.maybeSingle();
-
-if(result.error){
-
-console.error(
-"Ban check error:",
-result.error
-);
-
-return false;
-
-}
-
-if(
-result.data &&
-result.data.banned===true
-){
-
-alert(
-"🚫 این بازیکن توسط مدیریت مسدود شده است."
-);
-
-document.body.innerHTML=`
-
-<div style="
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:25px;
-background:#020817;
-color:white;
-font-family:Tahoma,Arial,sans-serif;
-text-align:center;
-">
-
-<div style="
-max-width:420px;
-width:100%;
-padding:30px;
-border-radius:25px;
-background:#0b1b3b;
-border:1px solid rgba(255,255,255,.1);
-box-shadow:0 15px 40px rgba(0,0,0,.4);
-">
-
-<div style="font-size:65px;">
-🚫
-</div>
-
-<div style="
-font-size:24px;
-font-weight:bold;
-margin-top:15px;
-">
-حساب مسدود شده
-</div>
-
-<div style="
-color:#aab9d8;
-margin-top:12px;
-line-height:1.8;
-">
-این حساب توسط مدیریت بازی مسدود شده است.
-</div>
-
-</div>
-
-</div>
-`;
-
-return true;
-
-}
-
-return false;
-
-}catch(error){
-
-console.error(
-"Ban check exception:",
-error
-);
-
-return false;
-
-}
-
-}
-
-
-/* =================================================
-CREATE ONLINE PLAYER DATA
-================================================= */
-
-function getOnlinePlayerData(){
-
-if(!onlineUser || !data){
-
-return null;
-
-}
-
-return {
-
-user_id:onlineUser.id,
-
-player_id:onlineUser.id,
-
-name:String(data.name || "بازیکن"),
-
-coins:Number(data.coins)||0,
-
-total_earned:Number(data.totalEarned)||0,
-
-reports:Number(data.reports)||0,
-
-special_reports:Number(data.specialReports)||0,
-
-click_power:Number(data.clickPower)||10,
-
-last_seen:new Date().toISOString(),
-
-data:JSON.parse(
-JSON.stringify(data)
-)
-
-};
-
-}
-
-
-/* =================================================
-SYNC CURRENT PLAYER
-================================================= */
-
-async function syncCurrentPlayer(){
-
-if(
-!onlineReady ||
-!onlineUser ||
-!data ||
-onlineSyncBusy
-){
-
-return;
-
-}
-
-onlineSyncBusy=true;
-
-try{
-
-const player =
-getOnlinePlayerData();
-
-if(!player){
-
-return;
-
-}
-
-const result =
-await supabaseClient
-.from("players")
-.upsert(
-player,
-{
-onConflict:"player_id"
-}
-);
-
-if(result.error){
-
-console.error(
-"Supabase sync error:",
-result.error
-);
-
-}else{
-
-console.log(
-"Player synced."
-);
-
-}
-
-}catch(error){
-
-console.error(
-"Sync exception:",
-error
-);
-
-}finally{
-
-onlineSyncBusy=false;
-
-}
-
-}
-
-
-/* =================================================
-ONLINE SYNC TIMER
-================================================= */
-
-setInterval(
-
-async ()=>{
-
-await syncCurrentPlayer();
-
-},
-
-5000
-
-);
-
-
-/* =================================================
-SYNC WHEN PAGE IS HIDDEN
-================================================= */
-
-document.addEventListener(
-"visibilitychange",
-()=>{
-
-if(document.visibilityState==="hidden"){
-
-syncCurrentPlayer();
-
-}
-
-}
-);
-
-
-/* =================================================
-START SUPABASE
-================================================= */
-
-connectSupabase();
-
-</script>
-
-
-<script>
 
 /* =================================================
 ACCOUNT SYSTEM
@@ -1977,13 +1375,13 @@ ACCOUNT SYSTEM
 const ACCOUNT_LIST_KEY =
 "coinClickerAccounts";
 
-let accounts;
+let accounts=[];
 
 try{
 
-accounts =
+accounts=
 JSON.parse(
-localStorage.getItem(ACCOUNT_LIST_KEY) || "[]"
+localStorage.getItem(ACCOUNT_LIST_KEY)||"[]"
 );
 
 if(!Array.isArray(accounts)){
@@ -1996,11 +1394,10 @@ accounts=[];
 
 }
 
-let currentAccountIndex =
+let currentAccountIndex=
 Number(
-localStorage.getItem("currentCoinAccount") || 0
+localStorage.getItem("currentCoinAccount")||0
 );
-
 
 /* =================================================
 DEFAULT ACCOUNT
@@ -2008,9 +1405,11 @@ DEFAULT ACCOUNT
 
 function defaultAccount(name){
 
-return {
+return{
 
 name:name,
+
+cloudId:null,
 
 coins:0,
 
@@ -2035,13 +1434,9 @@ clickPower:10,
 usedRewardCodes:[],
 
 upgrades:{
-
 sword:0,
-
 shield:0,
-
 crown:0
-
 },
 
 bots:{
@@ -2079,30 +1474,6 @@ healLevel:0
 
 }
 
-
-/* =================================================
-LOAD
-================================================= */
-
-if(accounts.length===0){
-
-accounts.push(
-defaultAccount("حساب 1")
-);
-
-}
-
-if(
-!Number.isInteger(currentAccountIndex) ||
-currentAccountIndex<0 ||
-currentAccountIndex>=accounts.length
-){
-
-currentAccountIndex=0;
-
-}
-
-
 /* =================================================
 FIX ACCOUNT
 ================================================= */
@@ -2124,6 +1495,15 @@ typeof acc.name!=="string" ||
 
 acc.name=
 "حساب "+(index+1);
+
+}
+
+if(
+typeof acc.cloudId!=="string" ||
+!acc.cloudId
+){
+
+acc.cloudId=null;
 
 }
 
@@ -2178,11 +1558,6 @@ acc.usedRewardCodes=[];
 
 }
 
-
-/* =================================================
-FIX SPECIAL REPORT
-================================================= */
-
 if(
 typeof acc.specialReports!=="number" ||
 !Number.isFinite(acc.specialReports) ||
@@ -2212,11 +1587,6 @@ acc.specialReportUpgradeLevel<0
 acc.specialReportUpgradeLevel=0;
 
 }
-
-
-/* =================================================
-UPGRADES
-================================================= */
 
 if(!acc.upgrades ||
 typeof acc.upgrades!=="object"){
@@ -2251,11 +1621,6 @@ typeof acc.upgrades.crown!=="number" ||
 acc.upgrades.crown=0;
 
 }
-
-
-/* =================================================
-BOTS
-================================================= */
 
 if(!acc.bots ||
 typeof acc.bots!=="object"){
@@ -2293,11 +1658,6 @@ acc.bots[type].enabled
 );
 
 });
-
-
-/* =================================================
-MINIGAME
-================================================= */
 
 if(
 !acc.miniGame ||
@@ -2355,17 +1715,36 @@ return acc;
 
 }
 
+/* =================================================
+LOAD
+================================================= */
 
-accounts =
+if(accounts.length===0){
+
+accounts.push(
+defaultAccount("حساب 1")
+);
+
+}
+
+accounts=
 accounts.map(
 (acc,index)=>
 fixAccount(acc,index)
 );
 
+if(
+!Number.isInteger(currentAccountIndex) ||
+currentAccountIndex<0 ||
+currentAccountIndex>=accounts.length
+){
 
-let data =
+currentAccountIndex=0;
+
+}
+
+let data=
 accounts[currentAccountIndex];
-
 
 /* =================================================
 SAVE
@@ -2387,6 +1766,35 @@ currentAccountIndex
 
 }
 
+/* =================================================
+CLOUD ID
+================================================= */
+
+function makeCloudId(){
+
+try{
+
+if(
+typeof crypto!=="undefined" &&
+typeof crypto.randomUUID==="function"
+){
+
+return crypto.randomUUID();
+
+}
+
+}catch(e){}
+
+return(
+"player_"+
+Date.now()+
+"_"+
+Math.random()
+.toString(36)
+.slice(2)
+);
+
+}
 
 /* =================================================
 PAGE NAVIGATION
@@ -2405,14 +1813,14 @@ return;
 
 document
 .querySelectorAll(".page")
-.forEach(p =>
-p.classList.remove("active")
+.forEach(
+p=>p.classList.remove("active")
 );
 
 document
 .querySelectorAll(".nav-btn")
-.forEach(b =>
-b.classList.remove("active")
+.forEach(
+b=>b.classList.remove("active")
 );
 
 document
@@ -2428,7 +1836,6 @@ document
 .classList.remove("show");
 
 }
-
 
 /* =================================================
 UPGRADE TABS
@@ -2476,7 +1883,6 @@ document
 
 }
 
-
 /* =================================================
 ACCOUNT MENU
 ================================================= */
@@ -2489,14 +1895,13 @@ document
 
 }
 
-
 /* =================================================
 RENDER ACCOUNTS
 ================================================= */
 
 function renderAccounts(){
 
-const box =
+const box=
 document.getElementById("accountList");
 
 box.innerHTML="";
@@ -2504,31 +1909,38 @@ box.innerHTML="";
 accounts.forEach(
 (acc,index)=>{
 
-const row =
+const row=
 document.createElement("div");
 
 row.style.display="flex";
 row.style.gap="6px";
 
-const btn =
+const btn=
 document.createElement("button");
 
-btn.className =
+btn.className=
 "account-item"+
 (index===currentAccountIndex
-? " active"
-: "");
+?" active"
+:"");
 
 btn.style.flex="1";
 
-btn.textContent =
+btn.textContent=
 "👤 "+acc.name;
 
-btn.onclick=()=>{
+btn.onclick=async()=>{
 
 currentAccountIndex=index;
 
 data=accounts[index];
+
+if(!data.cloudId){
+
+data.cloudId=
+makeCloudId();
+
+}
 
 save();
 
@@ -2542,12 +1954,11 @@ document
 .getElementById("accountMenu")
 .classList.remove("show");
 
-syncCurrentPlayer();
+await switchOnlineAccount();
 
 };
 
-
-const deleteBtn =
+const deleteBtn=
 document.createElement("button");
 
 deleteBtn.className="account-item";
@@ -2610,7 +2021,7 @@ startStage();
 
 updateUI();
 
-syncCurrentPlayer();
+switchOnlineAccount();
 
 };
 
@@ -2623,26 +2034,29 @@ box.appendChild(row);
 
 }
 
-
 /* =================================================
 CREATE ACCOUNT
 ================================================= */
 
-function createAccount(){
+async function createAccount(){
 
-const number =
+const number=
 accounts.length+1;
 
-accounts.push(
+const newAccount=
 defaultAccount(
 "حساب "+number
-)
 );
 
-currentAccountIndex =
+newAccount.cloudId=
+makeCloudId();
+
+accounts.push(newAccount);
+
+currentAccountIndex=
 accounts.length-1;
 
-data =
+data=
 accounts[currentAccountIndex];
 
 save();
@@ -2653,20 +2067,19 @@ startStage();
 
 updateUI();
 
-syncCurrentPlayer();
+await switchOnlineAccount();
 
 }
 
-
 /* =================================================
-SHOP REPORT SYSTEM
+REPORT SYSTEM
 ================================================= */
 
 const REPORT_PRICE=100000;
 
 function getIncomeMultiplier(){
 
-const reports =
+const reports=
 Number(data.reports);
 
 if(
@@ -2682,38 +2095,23 @@ return 1+(reports*2);
 
 }
 
-
-/* =================================================
-SPECIAL REPORT MULTIPLIER
-================================================= */
-
 function getSpecialReportMultiplier(){
 
-const reports =
+const reports=
 Number(data.specialReports)||0;
 
 return 1+(reports*25);
 
 }
 
-
-/* =================================================
-TOTAL INCOME MULTIPLIER
-================================================= */
-
 function getTotalIncomeMultiplier(){
 
-return (
-getIncomeMultiplier() *
+return(
+getIncomeMultiplier()*
 getSpecialReportMultiplier()
 );
 
 }
-
-
-/* =================================================
-SAFE INCOME
-================================================= */
 
 function addIncome(amount){
 
@@ -2748,10 +2146,10 @@ data.coins=0;
 
 data.totalEarned+=amount;
 
-const multiplier =
+const multiplier=
 getTotalIncomeMultiplier();
 
-const finalAmount =
+const finalAmount=
 amount*multiplier;
 
 if(
@@ -2772,14 +2170,9 @@ data.coins=0;
 
 }
 
-
-/* =================================================
-REPORT COUNT
-================================================= */
-
 function getAvailableReports(){
 
-const total =
+const total=
 Number(data.totalEarned);
 
 if(
@@ -2797,35 +2190,26 @@ total/REPORT_PRICE
 
 }
 
-
 function getUnclaimedReports(){
 
 return Math.max(
 0,
-getAvailableReports() -
-Number(data.claimedReportCount || 0)
+getAvailableReports()-
+Number(data.claimedReportCount||0)
 );
 
 }
 
-
-/* =================================================
-SHOP REPORT
-================================================= */
-
 function report(){
 
-const available =
+const available=
 getAvailableReports();
 
-const claimed =
-Number(
-data.claimedReportCount
-);
+const claimed=
+Number(data.claimedReportCount);
 
-const newReports =
-available-
-claimed;
+const newReports=
+available-claimed;
 
 if(newReports<=0){
 
@@ -2838,8 +2222,7 @@ return;
 
 }
 
-data.reports+=
-newReports;
+data.reports+=newReports;
 
 data.claimedReportCount=
 available;
@@ -2851,22 +2234,16 @@ updateUI();
 syncCurrentPlayer();
 
 alert(
-
 "🎉 ریپورت ثبت شد!\n\n"+
-
 "ریپورت‌های جدید: "+
 newReports+
-
 "\nمجموع ریپورت‌ها: "+
 data.reports+
-
 "\nضریب درآمد: ×"+
 getIncomeMultiplier()
-
 );
 
 }
-
 
 /* =================================================
 SPECIAL REPORT
@@ -2884,7 +2261,7 @@ return;
 
 }
 
-const amount =
+const amount=
 Number(data.specialReportPower)||1;
 
 data.specialReports+=amount;
@@ -2897,14 +2274,9 @@ syncCurrentPlayer();
 
 }
 
-
-/* =================================================
-SPECIAL REPORT UPGRADE PRICE
-================================================= */
-
 function getSpecialReportUpgradePrice(){
 
-const level =
+const level=
 Number(data.specialReportUpgradeLevel)||0;
 
 return Math.floor(
@@ -2912,11 +2284,6 @@ return Math.floor(
 );
 
 }
-
-
-/* =================================================
-SPECIAL REPORT UPGRADE
-================================================= */
 
 function upgradeSpecialReport(){
 
@@ -2930,7 +2297,7 @@ return;
 
 }
 
-const price =
+const price=
 getSpecialReportUpgradePrice();
 
 if(
@@ -2962,14 +2329,9 @@ syncCurrentPlayer();
 
 }
 
-
-/* =================================================
-SPECIAL REPORT UI
-================================================= */
-
 function updateSpecialReportUI(){
 
-const nav =
+const nav=
 document.getElementById(
 "nav-special-report"
 );
@@ -2994,12 +2356,10 @@ showPage("home");
 
 }
 
-
 document
 .getElementById("specialReportCount")
 .textContent=
 formatNumber(data.specialReports);
-
 
 document
 .getElementById("specialReportMultiplier")
@@ -3007,13 +2367,11 @@ document
 "ضریب این بخش: ×"+
 getSpecialReportMultiplier();
 
-
 document
 .getElementById("specialReportIncomeText")
 .textContent=
 "×"+
 getSpecialReportMultiplier();
-
 
 document
 .getElementById("specialReportPower")
@@ -3021,7 +2379,6 @@ document
 "+"+
 formatNumber(data.specialReportPower)+
 " ریپورت در هر کلیک";
-
 
 document
 .getElementById("specialReportUpgradePrice")
@@ -3034,14 +2391,39 @@ getSpecialReportUpgradePrice()
 
 }
 
-
 /* =================================================
-COINS
+CLICK
 ================================================= */
+
+/*
+قفل کلیک:
+بعد از هر کلیک، دایره برای ۱ ثانیه قفل می‌شود.
+در این مدت فقط ✋ نمایش داده می‌شود.
+*/
+
+let clickLocked=false;
 
 function clickCoin(){
 
-let gain =
+if(clickLocked){
+
+return;
+
+}
+
+clickLocked=true;
+
+const button=
+document.getElementById("clickButton");
+
+const icon=
+document.getElementById("clickIcon");
+
+button.classList.add("cooldown");
+
+icon.textContent="✋";
+
+let gain=
 Number(data.clickPower);
 
 if(
@@ -3067,10 +2449,21 @@ save();
 
 updateUI();
 
+syncCurrentPlayer();
+
 tryEnterFullscreen();
 
-}
+setTimeout(()=>{
 
+clickLocked=false;
+
+button.classList.remove("cooldown");
+
+icon.textContent="🪙";
+
+},1000);
+
+}
 
 /* =================================================
 UPDATE UI
@@ -3128,9 +2521,6 @@ document
 .textContent=
 data.miniGame.stage;
 
-
-/* ================= SHOP REPORT ================= */
-
 document
 .getElementById("reportCount")
 .textContent=
@@ -3142,10 +2532,8 @@ document
 "×"+
 getIncomeMultiplier();
 
-
-const progress =
-data.totalEarned%
-REPORT_PRICE;
+const progress=
+data.totalEarned%REPORT_PRICE;
 
 document
 .getElementById("reportProgress")
@@ -3153,13 +2541,12 @@ document
 formatNumber(progress)+
 " / 100K";
 
-
-const reportButton =
+const reportButton=
 document.getElementById(
 "reportButton"
 );
 
-const unclaimed =
+const unclaimed=
 getUnclaimedReports();
 
 if(unclaimed>0){
@@ -3180,9 +2567,6 @@ reportButton.textContent=
 
 }
 
-
-/* ================= OTHER ================= */
-
 updateSpecialReportUI();
 
 renderUpgrades();
@@ -3193,20 +2577,17 @@ updateBattleUI();
 
 }
 
-
 /* =================================================
-FORMAT NUMBER
+FORMAT
 ================================================= */
 
 function formatNumber(number){
 
 number=Number(number);
 
-if(
-!Number.isFinite(number)
-){
+if(!Number.isFinite(number)){
 
-return "0";
+return"0";
 
 }
 
@@ -3239,8 +2620,7 @@ const units=[
 "Od",
 "Nd",
 "Vg",
-"Uv",
-"Dv"
+"Uv"
 ];
 
 let index=0;
@@ -3281,7 +2661,6 @@ return result+" "+units[index];
 
 }
 
-
 /* =================================================
 PERSONAL UPGRADES
 ================================================= */
@@ -3314,29 +2693,24 @@ power:5000
 
 };
 
-
 function upgradePrice(type){
 
-const cfg =
+const cfg=
 upgradeConfig[type];
 
-const level =
+const level=
 Number(data.upgrades[type])||0;
 
 return Math.floor(
 cfg.basePrice*
-Math.pow(
-cfg.growth,
-level
-)
+Math.pow(cfg.growth,level)
 );
 
 }
 
-
 function buyUpgrade(type,amount){
 
-const cfg =
+const cfg=
 upgradeConfig[type];
 
 for(
@@ -3345,7 +2719,7 @@ i<amount;
 i++
 ){
 
-const price =
+const price=
 upgradePrice(type);
 
 if(
@@ -3371,10 +2745,9 @@ syncCurrentPlayer();
 
 }
 
-
 function renderUpgrades(){
 
-const box =
+const box=
 document.getElementById(
 "upgradeList"
 );
@@ -3382,22 +2755,21 @@ document.getElementById(
 box.innerHTML="";
 
 Object.keys(upgradeConfig)
-.forEach(
-type=>{
+.forEach(type=>{
 
-const cfg =
+const cfg=
 upgradeConfig[type];
 
-const level =
+const level=
 Number(data.upgrades[type])||0;
 
-const price =
+const price=
 upgradePrice(type);
 
-const card =
+const card=
 document.createElement("div");
 
-card.className =
+card.className=
 "card upgrade-card";
 
 card.innerHTML=`
@@ -3413,19 +2785,11 @@ ${cfg.name}
 </div>
 
 <div class="upgrade-power">
-
-سطح ${level}
-|
-+${formatNumber(cfg.power)}
-قدرت
-
+سطح ${level} | +${formatNumber(cfg.power)} قدرت
 </div>
 
 <div class="price">
-
-${formatNumber(price)}
-🪙
-
+${formatNumber(price)} 🪙
 </div>
 
 </div>
@@ -3451,7 +2815,6 @@ MAX
 </button>
 
 </div>
-
 `;
 
 box.appendChild(card);
@@ -3460,14 +2823,13 @@ box.appendChild(card);
 
 }
 
-
 function buyMaxUpgrade(type){
 
 let count=0;
 
 while(true){
 
-const price =
+const price=
 upgradePrice(type);
 
 if(
@@ -3497,7 +2859,6 @@ updateUI();
 syncCurrentPlayer();
 
 }
-
 
 /* =================================================
 BOTS
@@ -3534,25 +2895,20 @@ growth:1.5
 
 };
 
-
 function botPrice(type){
 
-const cfg =
+const cfg=
 botConfig[type];
 
-const count =
+const count=
 Number(data.bots[type].count)||0;
 
 return Math.floor(
 cfg.price*
-Math.pow(
-cfg.growth,
-count
-)
+Math.pow(cfg.growth,count)
 );
 
 }
-
 
 function buyBot(type,amount){
 
@@ -3562,7 +2918,7 @@ i<amount;
 i++
 ){
 
-const price =
+const price=
 botPrice(type);
 
 if(
@@ -3585,14 +2941,13 @@ syncCurrentPlayer();
 
 }
 
-
 function buyMaxBot(type){
 
 let count=0;
 
 while(true){
 
-const price =
+const price=
 botPrice(type);
 
 if(
@@ -3620,7 +2975,6 @@ syncCurrentPlayer();
 
 }
 
-
 function toggleBot(type){
 
 if(
@@ -3646,14 +3000,9 @@ syncCurrentPlayer();
 
 }
 
-
-/* =================================================
-RENDER BOTS
-================================================= */
-
 function renderBots(){
 
-const box =
+const box=
 document.getElementById(
 "botList"
 );
@@ -3661,19 +3010,18 @@ document.getElementById(
 box.innerHTML="";
 
 Object.keys(botConfig)
-.forEach(
-type=>{
+.forEach(type=>{
 
-const cfg =
+const cfg=
 botConfig[type];
 
-const bot =
+const bot=
 data.bots[type];
 
-const price =
+const price=
 botPrice(type);
 
-const card =
+const card=
 document.createElement("div");
 
 card.className="card";
@@ -3693,26 +3041,20 @@ ${cfg.name}
 </div>
 
 <div class="upgrade-power">
-
 درآمد خام:
 ${formatNumber(cfg.reward)}
 🪙
-
 </div>
 
 <div class="price">
-
 قیمت بعدی:
 ${formatNumber(price)}
 🪙
-
 </div>
 
 <div class="small">
-
 تعداد:
 ${bot.count}
-
 </div>
 
 </div>
@@ -3747,14 +3089,11 @@ onclick="toggleBot('${type}')">
 
 ${
 bot.enabled
-?
-"🟢 فعال"
-:
-"⚪ خاموش"
+?"🟢 فعال"
+:"⚪ خاموش"
 }
 
 </button>
-
 `;
 
 box.appendChild(card);
@@ -3762,7 +3101,6 @@ box.appendChild(card);
 });
 
 }
-
 
 /* =================================================
 BOT INCOME
@@ -3773,13 +3111,12 @@ setInterval(
 ()=>{
 
 Object.keys(botConfig)
-.forEach(
-type=>{
+.forEach(type=>{
 
-const cfg =
+const cfg=
 botConfig[type];
 
-const bot =
+const bot=
 data.bots[type];
 
 if(
@@ -3787,7 +3124,7 @@ bot.count>0 &&
 bot.enabled
 ){
 
-const amount =
+const amount=
 cfg.reward*
 bot.count;
 
@@ -3801,12 +3138,12 @@ save();
 
 updateUI();
 
+syncCurrentPlayer();
+
 },
 
 1000
-
 );
-
 
 /* =================================================
 BATTLE
@@ -3818,79 +3155,62 @@ let enemyHp=100;
 
 let enemyMaxHp=100;
 
-
 function getCharacterDamage(){
 
-const level =
+const level=
 Number(data.miniGame.damageLevel)||0;
 
-return 10+
-level*5;
+return 10+level*5;
 
 }
-
 
 function getCharacterMaxHp(){
 
-const level =
+const level=
 Number(data.miniGame.healLevel)||0;
 
-return 100+
-level*25;
+return 100+level*25;
 
 }
-
 
 function getEnemyMaxHp(){
 
 return Math.floor(
-
 100*
 Math.pow(
 1.003,
 data.miniGame.stage-1
 )
-
 );
 
 }
 
-
 function getEnemyDamage(){
 
 return Math.floor(
-
 7*
 Math.pow(
 1.002,
 data.miniGame.stage-1
 )
-
 );
 
 }
 
-
 function getBattleReward(){
 
 return Math.max(
-
 1,
-
 Math.floor(
-
 100*
 Math.pow(
 1.035,
 data.miniGame.stage-1
 )
-
 )
-
 );
 
 }
-
 
 function startStage(){
 
@@ -3906,7 +3226,6 @@ getCharacterMaxHp();
 updateBattleUI();
 
 }
-
 
 function battle(){
 
@@ -3943,7 +3262,6 @@ data.miniGame.stage++;
 document
 .getElementById("battleLog")
 .textContent=
-
 "🎉 پیروز شدی! +"+
 formatNumber(
 reward*
@@ -3978,17 +3296,13 @@ playerHp=0;
 document
 .getElementById("battleLog")
 .textContent=
-
 "💥 باختی! مرحله حفظ شد؛ دوباره مبارزه کن.";
 
 setTimeout(
 ()=>{
-
 playerHp=
 getCharacterMaxHp();
-
 updateBattleUI();
-
 },
 500
 );
@@ -3998,7 +3312,6 @@ updateBattleUI();
 document
 .getElementById("battleLog")
 .textContent=
-
 "⚔️ تو "+
 damage+
 " دمیج زدی و ربات "+
@@ -4010,11 +3323,6 @@ enemyDamage+
 updateBattleUI();
 
 }
-
-
-/* =================================================
-BATTLE UI
-================================================= */
 
 function updateBattleUI(){
 
@@ -4029,25 +3337,18 @@ data.miniGame.stage;
 document
 .getElementById("playerHp")
 .textContent=
-Math.max(
-0,
-playerHp
-)+
+Math.max(0,playerHp)+
 " / "+
 getCharacterMaxHp();
 
 document
 .getElementById("enemyHp")
 .textContent=
-Math.max(
-0,
-enemyHp
-);
+Math.max(0,enemyHp);
 
 document
 .getElementById("playerHpBar")
 .style.width=
-
 Math.max(
 0,
 Math.min(
@@ -4056,20 +3357,15 @@ playerHp/
 getCharacterMaxHp()*
 100
 )
-)+
-"%";
+)+"%";
 
 document
 .getElementById("enemyHpBar")
 .style.width=
-
 Math.max(
 0,
-enemyHp/
-enemyMax*
-100
-)+
-"%";
+enemyHp/enemyMax*100
+)+"%";
 
 const damagePrice=
 500*
@@ -4101,22 +3397,15 @@ Math.floor(hpPrice)
 
 }
 
-
-/* =================================================
-DAMAGE UPGRADE
-================================================= */
-
 function upgradeDamage(){
 
 const price=
 Math.floor(
-
 500*
 Math.pow(
 1.5,
 Number(data.miniGame.damageLevel)||0
 )
-
 );
 
 if(
@@ -4124,9 +3413,7 @@ if(
 data.coins<price
 ){
 
-alert(
-"سکه کافی نداری!"
-);
+alert("سکه کافی نداری!");
 
 return;
 
@@ -4144,22 +3431,15 @@ syncCurrentPlayer();
 
 }
 
-
-/* =================================================
-HP UPGRADE
-================================================= */
-
 function upgradeHP(){
 
 const price=
 Math.floor(
-
 700*
 Math.pow(
 1.5,
 Number(data.miniGame.healLevel)||0
 )
-
 );
 
 if(
@@ -4167,9 +3447,7 @@ if(
 data.coins<price
 ){
 
-alert(
-"سکه کافی نداری!"
-);
+alert("سکه کافی نداری!");
 
 return;
 
@@ -4193,7 +3471,6 @@ syncCurrentPlayer();
 
 }
 
-
 /* =================================================
 SHOP
 ================================================= */
@@ -4208,7 +3485,6 @@ document.getElementById(
 box.style.display="block";
 
 }
-
 
 /* =================================================
 REWARD CODE
@@ -4269,7 +3545,6 @@ message.textContent=
 
 }
 
-
 /* =================================================
 INFINITY
 ================================================= */
@@ -4299,7 +3574,6 @@ syncCurrentPlayer();
 
 }
 
-
 /* =================================================
 FULLSCREEN
 ================================================= */
@@ -4315,8 +3589,7 @@ return;
 }
 
 if(
-document.documentElement
-.requestFullscreen
+document.documentElement.requestFullscreen
 ){
 
 await document
@@ -4325,12 +3598,638 @@ await document
 
 }
 
+}catch(e){}
+
+}
+
+/* =================================================
+SUPABASE FUNCTIONS
+================================================= */
+
+async function checkOnlineBan(){
+
+if(
+!onlineReady ||
+!onlineUser ||
+!data ||
+!data.cloudId
+){
+
+return false;
+
+}
+
+try{
+
+const result=
+await supabaseClient
+.from("players")
+.select("banned")
+.eq("user_id",onlineUser.id)
+.eq("player_id",data.cloudId)
+.maybeSingle();
+
+if(result.error){
+
+console.error(
+"Ban check error:",
+result.error
+);
+
+return false;
+
+}
+
+if(
+result.data &&
+result.data.banned===true
+){
+
+document.body.innerHTML=`
+
+<div style="
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:25px;
+background:#020817;
+color:white;
+font-family:Tahoma,Arial,sans-serif;
+text-align:center;
+">
+
+<div style="
+max-width:420px;
+width:100%;
+padding:30px;
+border-radius:25px;
+background:#0b1b3b;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+">
+
+<div style="font-size:65px;">
+🚫
+</div>
+
+<div style="
+font-size:24px;
+font-weight:bold;
+margin-top:15px;
+">
+حساب مسدود شده
+</div>
+
+<div style="
+color:#aab9d8;
+margin-top:12px;
+line-height:1.8;
+">
+این حساب توسط مدیریت بازی مسدود شده است.
+</div>
+
+</div>
+</div>
+`;
+
+return true;
+
+}
+
+return false;
+
+}catch(error){
+
+console.error(
+"Ban check exception:",
+error
+);
+
+return false;
+
+}
+
+}
+
+/* =================================================
+CLOUD LOAD
+================================================= */
+
+async function loadOnlinePlayer(){
+
+if(
+!onlineReady ||
+!onlineUser ||
+!data ||
+!data.cloudId
+){
+
+return false;
+
+}
+
+try{
+
+const result=
+await supabaseClient
+.from("players")
+.select("*")
+.eq("user_id",onlineUser.id)
+.eq("player_id",data.cloudId)
+.maybeSingle();
+
+if(result.error){
+
+console.error(
+"Online load error:",
+result.error
+);
+
+return false;
+
+}
+
+if(!result.data){
+
+console.log(
+"No cloud player found. Uploading local player."
+);
+
+return false;
+
+}
+
+const cloud=
+result.data;
+
+let cloudData=null;
+
+if(cloud.data){
+
+try{
+
+cloudData=
+typeof cloud.data==="string"
+?
+JSON.parse(cloud.data)
+:
+JSON.parse(
+JSON.stringify(cloud.data)
+);
+
 }catch(e){
 
-}
+console.error(
+"Cloud JSON error:",
+e
+);
 
 }
 
+}
+
+if(
+cloudData &&
+typeof cloudData==="object"
+){
+
+data=cloudData;
+
+}
+
+data.cloudId=
+data.cloudId ||
+cloud.player_id;
+
+if(
+cloud.name!==null &&
+cloud.name!==undefined &&
+String(cloud.name).trim()!==""
+){
+
+data.name=
+String(cloud.name);
+
+}
+
+if(
+cloud.coins!==null &&
+cloud.coins!==undefined
+){
+
+data.coins=
+Number(cloud.coins)||0;
+
+}
+
+if(
+cloud.total_earned!==null &&
+cloud.total_earned!==undefined
+){
+
+data.totalEarned=
+Number(cloud.total_earned)||0;
+
+}
+
+if(
+cloud.reports!==null &&
+cloud.reports!==undefined
+){
+
+data.reports=
+Number(cloud.reports)||0;
+
+}
+
+if(
+cloud.special_reports!==null &&
+cloud.special_reports!==undefined
+){
+
+data.specialReports=
+Number(cloud.special_reports)||0;
+
+}
+
+if(
+cloud.click_power!==null &&
+cloud.click_power!==undefined
+){
+
+data.clickPower=
+Number(cloud.click_power)||10;
+
+}
+
+accounts[currentAccountIndex]=
+data;
+
+save();
+
+console.log(
+"Cloud player loaded:",
+data.coins
+);
+
+return true;
+
+}catch(error){
+
+console.error(
+"Load player exception:",
+error
+);
+
+return false;
+
+}
+
+}
+
+/* =================================================
+CREATE CLOUD PLAYER OBJECT
+================================================= */
+
+function getOnlinePlayerData(){
+
+if(
+!onlineUser ||
+!data
+){
+
+return null;
+
+}
+
+if(!data.cloudId){
+
+data.cloudId=
+onlineUser.id;
+
+}
+
+return{
+
+user_id:
+onlineUser.id,
+
+player_id:
+data.cloudId,
+
+name:
+String(
+data.name||
+"بازیکن"
+),
+
+coins:
+Number(data.coins)||0,
+
+total_earned:
+Number(data.totalEarned)||0,
+
+reports:
+Number(data.reports)||0,
+
+special_reports:
+Number(data.specialReports)||0,
+
+click_power:
+Number(data.clickPower)||10,
+
+last_seen:
+new Date().toISOString(),
+
+data:
+JSON.parse(
+JSON.stringify(data)
+)
+
+};
+
+}
+
+/* =================================================
+SYNC
+================================================= */
+
+async function syncCurrentPlayer(){
+
+if(
+!onlineReady ||
+!onlineUser ||
+!data ||
+onlineSyncBusy
+){
+
+return;
+
+}
+
+onlineSyncBusy=true;
+
+try{
+
+if(!data.cloudId){
+
+data.cloudId=
+onlineUser.id;
+
+save();
+
+}
+
+const player=
+getOnlinePlayerData();
+
+if(!player){
+
+return;
+
+}
+
+const result=
+await supabaseClient
+.from("players")
+.upsert(
+player,
+{
+onConflict:"player_id"
+}
+);
+
+if(result.error){
+
+console.error(
+"Supabase sync error:",
+result.error
+);
+
+}else{
+
+console.log(
+"Player synced:",
+player.player_id
+);
+
+}
+
+}catch(error){
+
+console.error(
+"Sync exception:",
+error
+);
+
+}finally{
+
+onlineSyncBusy=false;
+
+}
+
+}
+
+/* =================================================
+CONNECT SUPABASE
+================================================= */
+
+async function connectSupabase(){
+
+try{
+
+const sessionResult=
+await supabaseClient
+.auth
+.getSession();
+
+let session=
+sessionResult.data.session;
+
+if(!data.cloudId){
+
+if(
+session &&
+session.user
+){
+
+data.cloudId=
+session.user.id;
+
+}
+
+}
+
+if(!session){
+
+const loginResult=
+await supabaseClient
+.auth
+.signInAnonymously();
+
+if(loginResult.error){
+
+console.error(
+"Anonymous login error:",
+loginResult.error
+);
+
+return;
+
+}
+
+session=
+loginResult.data.session;
+
+}
+
+if(
+!session ||
+!session.user
+){
+
+console.error(
+"Supabase user not found."
+);
+
+return;
+
+}
+
+onlineUser=
+session.user;
+
+onlineReady=true;
+
+if(!data.cloudId){
+
+data.cloudId=
+onlineUser.id;
+
+save();
+
+}
+
+const banned=
+await checkOnlineBan();
+
+if(banned){
+
+return;
+
+}
+
+const loaded=
+await loadOnlinePlayer();
+
+if(loaded){
+
+save();
+
+updateUI();
+
+renderAccounts();
+
+startStage();
+
+}
+
+await syncCurrentPlayer();
+
+console.log(
+"Supabase connected:",
+onlineUser.id
+);
+
+}catch(error){
+
+console.error(
+"Supabase connection error:",
+error
+);
+
+}
+
+}
+
+/* =================================================
+SWITCH ONLINE ACCOUNT
+================================================= */
+
+async function switchOnlineAccount(){
+
+if(!onlineReady){
+
+return;
+
+}
+
+if(!data.cloudId){
+
+data.cloudId=
+makeCloudId();
+
+save();
+
+}
+
+const banned=
+await checkOnlineBan();
+
+if(banned){
+
+return;
+
+}
+
+const loaded=
+await loadOnlinePlayer();
+
+if(loaded){
+
+save();
+
+}
+
+updateUI();
+
+renderAccounts();
+
+startStage();
+
+await syncCurrentPlayer();
+
+}
+
+/* =================================================
+AUTO SYNC
+================================================= */
+
+setInterval(
+async()=>{
+await syncCurrentPlayer();
+},
+5000
+);
+
+/* =================================================
+SAVE WHEN LEAVING PAGE
+================================================= */
+
+document.addEventListener(
+"visibilitychange",
+()=>{
+
+if(
+document.visibilityState==="hidden"
+){
+
+syncCurrentPlayer();
+
+}
+
+});
 
 /* =================================================
 INITIALIZE
@@ -4344,7 +4243,6 @@ startStage();
 
 updateUI();
 
-
 document.addEventListener(
 "click",
 tryEnterFullscreen,
@@ -4352,6 +4250,8 @@ tryEnterFullscreen,
 once:true
 }
 );
+
+connectSupabase();
 
 </script>
 
