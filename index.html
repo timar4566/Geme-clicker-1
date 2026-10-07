@@ -1399,10 +1399,6 @@ Number(
 localStorage.getItem("currentCoinAccount")||0
 );
 
-/* =================================================
-DEFAULT ACCOUNT
-================================================= */
-
 function defaultAccount(name){
 
 return{
@@ -1473,10 +1469,6 @@ healLevel:0
 };
 
 }
-
-/* =================================================
-FIX ACCOUNT
-================================================= */
 
 function fixAccount(acc,index){
 
@@ -1715,10 +1707,6 @@ return acc;
 
 }
 
-/* =================================================
-LOAD
-================================================= */
-
 if(accounts.length===0){
 
 accounts.push(
@@ -1746,10 +1734,6 @@ currentAccountIndex=0;
 let data=
 accounts[currentAccountIndex];
 
-/* =================================================
-SAVE
-================================================= */
-
 function save(){
 
 accounts[currentAccountIndex]=data;
@@ -1765,10 +1749,6 @@ currentAccountIndex
 );
 
 }
-
-/* =================================================
-CLOUD ID
-================================================= */
 
 function makeCloudId(){
 
@@ -1795,10 +1775,6 @@ Math.random()
 );
 
 }
-
-/* =================================================
-PAGE NAVIGATION
-================================================= */
 
 function showPage(page){
 
@@ -1836,10 +1812,6 @@ document
 .classList.remove("show");
 
 }
-
-/* =================================================
-UPGRADE TABS
-================================================= */
 
 function showUpgradeTab(tab){
 
@@ -1883,10 +1855,6 @@ document
 
 }
 
-/* =================================================
-ACCOUNT MENU
-================================================= */
-
 function toggleAccounts(){
 
 document
@@ -1894,10 +1862,6 @@ document
 .classList.toggle("show");
 
 }
-
-/* =================================================
-RENDER ACCOUNTS
-================================================= */
 
 function renderAccounts(){
 
@@ -2033,10 +1997,6 @@ box.appendChild(row);
 });
 
 }
-
-/* =================================================
-CREATE ACCOUNT
-================================================= */
 
 async function createAccount(){
 
@@ -2395,12 +2355,6 @@ getSpecialReportUpgradePrice()
 CLICK
 ================================================= */
 
-/*
-قفل کلیک:
-بعد از هر کلیک، دایره برای ۱ ثانیه قفل می‌شود.
-در این مدت فقط ✋ نمایش داده می‌شود.
-*/
-
 let clickLocked=false;
 
 function clickCoin(){
@@ -2464,10 +2418,6 @@ icon.textContent="🪙";
 },1000);
 
 }
-
-/* =================================================
-UPDATE UI
-================================================= */
 
 function updateUI(){
 
@@ -2577,10 +2527,6 @@ updateBattleUI();
 
 }
 
-/* =================================================
-FORMAT
-================================================= */
-
 function formatNumber(number){
 
 number=Number(number);
@@ -2660,10 +2606,6 @@ result
 return result+" "+units[index];
 
 }
-
-/* =================================================
-PERSONAL UPGRADES
-================================================= */
 
 const upgradeConfig={
 
@@ -2859,10 +2801,6 @@ updateUI();
 syncCurrentPlayer();
 
 }
-
-/* =================================================
-BOTS
-================================================= */
 
 const botConfig={
 
@@ -3102,10 +3040,6 @@ box.appendChild(card);
 
 }
 
-/* =================================================
-BOT INCOME
-================================================= */
-
 setInterval(
 
 ()=>{
@@ -3144,10 +3078,6 @@ syncCurrentPlayer();
 
 1000
 );
-
-/* =================================================
-BATTLE
-================================================= */
 
 let playerHp=100;
 
@@ -3471,10 +3401,6 @@ syncCurrentPlayer();
 
 }
 
-/* =================================================
-SHOP
-================================================= */
-
 function shopComingSoon(){
 
 const box=
@@ -3490,7 +3416,7 @@ box.style.display="block";
 REWARD CODE
 ================================================= */
 
-async function useRewardCode(){
+function useRewardCode(){
 
 const input=
 document.getElementById(
@@ -3507,7 +3433,7 @@ input.value
 .trim()
 .toUpperCase();
 
-/* کد معمولی قبلی */
+/* کد قبلی */
 if(code==="CSSHTML5"){
 
 if(
@@ -3541,128 +3467,44 @@ return;
 
 }
 
-/* کد ویژه: فقط یک نفر در کل بازی */
-if(code==="مصلح مبارکت"){
+/* کد جدید: مصلح مبارکت */
+if(code==="مصلح مبارکت".toUpperCase()){
 
-const GLOBAL_CODE_ID=
-"REWARD_CODE_MOSLEH_MOBARAK";
+const rewardCode=
+"مصلح مبارکت";
 
 if(
 data.usedRewardCodes
-.includes(GLOBAL_CODE_ID)
+.includes(rewardCode)
 ){
 
 message.textContent=
-"❌ این کد را قبلاً استفاده کرده‌ای.";
+"❌ این کد قبلاً در این اکانت استفاده شده.";
 
 return;
 
 }
 
-if(!onlineReady || !onlineUser){
+data.usedRewardCodes.push(rewardCode);
+
+data.coins+=1000000;
 
 message.textContent=
-"❌ اتصال به سرور آماده نیست. چند لحظه بعد دوباره امتحان کن.";
+"🎉 مبارکه! 1M سکه به حسابت اضافه شد 🪙";
 
-return;
-
-}
-
-message.textContent=
-"⏳ در حال بررسی کد...";
-
-try{
-
-const result=
-await supabaseClient
-.from("players")
-.insert({
-
-user_id:onlineUser.id,
-
-player_id:GLOBAL_CODE_ID,
-
-name:"کد جایزه مصلح مبارکت",
-
-coins:0,
-
-total_earned:0,
-
-reports:0,
-
-special_reports:0,
-
-click_power:10,
-
-last_seen:new Date().toISOString(),
-
-data:{
-rewardCode:GLOBAL_CODE_ID,
-claimedBy:onlineUser.id
-}
-
-});
-
-if(result.error){
-
-/* اگر رکورد از قبل وجود داشته باشد، یعنی یک نفر قبلاً کد را گرفته */
-if(result.error.code==="23505"){
-
-message.textContent=
-"❌ این کد قبلاً توسط یک نفر استفاده شده است.";
-
-}else{
-
-console.error(
-"Global reward code error:",
-result.error
-);
-
-message.textContent=
-"❌ خطا در ثبت کد. دوباره امتحان کن.";
-
-}
-
-return;
-
-}
-
-/* فقط بعد از ثبت موفق در سرور، جایزه داده می‌شود */
-data.usedRewardCodes.push(GLOBAL_CODE_ID);
-
-data.coins+=500000;
-
-data.totalEarned+=500000;
+input.value="";
 
 save();
 
 updateUI();
 
-await syncCurrentPlayer();
-
-input.value="";
-
-message.textContent=
-"🎉 مبارکت! 500,000 سکه به حسابت اضافه شد.";
-
-return;
-
-}catch(error){
-
-console.error(
-"Global reward code exception:",
-error
-);
-
-message.textContent=
-"❌ خطا در اتصال به سرور. دوباره امتحان کن.";
+syncCurrentPlayer();
 
 return;
 
 }
 
-}
-
+/* کد اشتباه */
 message.textContent=
 "❌ کد اشتباه است.";
 
@@ -3697,10 +3539,6 @@ syncCurrentPlayer();
 
 }
 
-/* =================================================
-FULLSCREEN
-================================================= */
-
 async function tryEnterFullscreen(){
 
 try{
@@ -3724,10 +3562,6 @@ await document
 }catch(e){}
 
 }
-
-/* =================================================
-SUPABASE FUNCTIONS
-================================================= */
 
 async function checkOnlineBan(){
 
@@ -3834,10 +3668,6 @@ return false;
 }
 
 }
-
-/* =================================================
-CLOUD LOAD
-================================================= */
 
 async function loadOnlinePlayer(){
 
@@ -4011,10 +3841,6 @@ return false;
 
 }
 
-/* =================================================
-CREATE CLOUD PLAYER OBJECT
-================================================= */
-
 function getOnlinePlayerData(){
 
 if(
@@ -4073,10 +3899,6 @@ JSON.stringify(data)
 };
 
 }
-
-/* =================================================
-SYNC
-================================================= */
 
 async function syncCurrentPlayer(){
 
@@ -4153,10 +3975,6 @@ onlineSyncBusy=false;
 }
 
 }
-
-/* =================================================
-CONNECT SUPABASE
-================================================= */
 
 async function connectSupabase(){
 
@@ -4276,10 +4094,6 @@ error
 
 }
 
-/* =================================================
-SWITCH ONLINE ACCOUNT
-================================================= */
-
 async function switchOnlineAccount(){
 
 if(!onlineReady){
@@ -4325,20 +4139,12 @@ await syncCurrentPlayer();
 
 }
 
-/* =================================================
-AUTO SYNC
-================================================= */
-
 setInterval(
 async()=>{
 await syncCurrentPlayer();
 },
 5000
 );
-
-/* =================================================
-SAVE WHEN LEAVING PAGE
-================================================= */
 
 document.addEventListener(
 "visibilitychange",
@@ -4353,10 +4159,6 @@ syncCurrentPlayer();
 }
 
 });
-
-/* =================================================
-INITIALIZE
-================================================= */
 
 save();
 
