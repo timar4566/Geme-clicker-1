@@ -2160,6 +2160,10 @@ Number(data.claimedReportCount||0)
 
 }
 
+/* =========================
+   REPORT - EDITED
+========================= */
+
 function report(){
 
 const available=
@@ -2181,6 +2185,13 @@ alert(
 return;
 
 }
+
+/*
+   گرفتن ریپورت، تمام سکه‌های فعلی
+   بازیکن را مصرف می‌کند.
+*/
+
+data.coins=0;
 
 data.reports+=newReports;
 
@@ -3079,6 +3090,10 @@ syncCurrentPlayer();
 1000
 );
 
+/* =================================================
+BATTLE
+================================================= */
+
 let playerHp=100;
 
 let enemyHp=100;
@@ -3103,27 +3118,21 @@ return 100+level*25;
 
 }
 
+/* ربات بعد از هر مرحله 10 HP بیشتر می‌گیرد */
+
 function getEnemyMaxHp(){
 
-return Math.floor(
-100*
-Math.pow(
-1.003,
-data.miniGame.stage-1
-)
-);
+return 100+
+((data.miniGame.stage-1)*10);
 
 }
 
+/* ربات بعد از هر مرحله 10 Damage بیشتر می‌گیرد */
+
 function getEnemyDamage(){
 
-return Math.floor(
-7*
-Math.pow(
-1.002,
-data.miniGame.stage-1
-)
-);
+return 7+
+((data.miniGame.stage-1)*10);
 
 }
 
